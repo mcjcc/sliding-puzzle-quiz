@@ -1,15 +1,19 @@
 @import 'vars';
 @import 'tile';
 
+body{
+  font-family: Sans-Serif;
+}
 ul{
   list-style-type: none;
 }
 
 .sliding-puzzle-figure{
   background: $black;
-  width: $board_width;
-  height: $board_height;
-  color: white;
+  width: $board-width;
+  height: $board-height;
+  border-radius: .5em;
+  font-size:16px;
 
   .sliding-puzzle{
     margin:0;
