@@ -1,23 +1,28 @@
 @import 'vars';
 @import 'tile';
+*{
+  box-sizing: border-box;
+}
 
 body{
   font-family: Sans-Serif;
+  margin: 0;
 }
+
 ul{
   list-style-type: none;
 }
 
 .sliding-puzzle-figure{
-  background: $black;
-  width: $board-width;
-  height: $board-height;
-  border-radius: .5em;
-  font-size:16px;
-
+  margin: 30px;
   .sliding-puzzle{
+    background: $black;
+    width: $board-width;
+    height: $board-height;
+    border-radius: .5em;
+    font-size:16px;
     margin:0;
-    padding:0;
+    padding:10px;
   }
 }
 
