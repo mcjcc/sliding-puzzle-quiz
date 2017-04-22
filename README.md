@@ -1,4 +1,4 @@
-# Sliding Puzzle Quiz
+# Johnny's Version of Sliding Puzzle Quiz
 
 Breathe in, breathe out.
 
