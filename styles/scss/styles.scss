@@ -1,9 +1,24 @@
+@import 'vars';
+@import 'tile';
+
+ul{
+  list-style-type: none;
+}
+
 .sliding-puzzle-figure{
-  background: green;
+  background: $black;
+  width: $board_width;
+  height: $board_height;
+  color: white;
 
   .sliding-puzzle{
-    .tile{
-      list-style-type: none;
-    }
+    margin:0;
+    padding:0;
   }
+}
+
+figcaption{
+  display: block;
+  clear:both;
+  color: $black;
 }
