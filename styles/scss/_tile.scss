@@ -1,10 +1,20 @@
 .sliding-puzzle-figure{
   .sliding-puzzle{
     .tile{
-      width: $board_width/3;
-      height: $board_height/3;
+      width: $board-width/3;
+      height: $board-height/3;
+      line-height: $board-height/3;
+      text-align: center;
       display: block;
       float: left;
+      font-size: 2em;
+      background: white;
+      border:.25em solid;
+      border-left-color: $light-grey;
+      border-top-color: $light-grey;
+      border-right-color: $dark-grey;
+      border-bottom-color: $dark-grey;
+
     }
   }
 }
