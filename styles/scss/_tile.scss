@@ -8,7 +8,7 @@
       line-height: 56px;
       text-align: center;
       display: block;
-      float: left;
+      // float: left;
       font-size: 2em;
       background: white;
       border: 6px solid;
@@ -16,6 +16,7 @@
       border-top-color: $light-grey;
       border-right-color: $dark-grey;
       border-bottom-color: $dark-grey;
+      position: absolute;
 
     }
   }
