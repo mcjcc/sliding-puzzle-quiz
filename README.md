@@ -18,6 +18,8 @@ $ ruby -run -ehttpd . -p8000
 $ sass --watch styles/scss:styles
 ```
 
+---
+
 Breathe in, breathe out.
 
 This quiz will be used most importantly to evaluate skill set and the type of tasks/projects you'd be great for. There are many different ways to solve the challenges outlined below, so take your time, and let us know if you have any questions.
