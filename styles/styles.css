@@ -4,14 +4,14 @@
   line-height: 56px;
   text-align: center;
   display: block;
-  float: left;
   font-size: 2em;
   background: white;
   border: 6px solid;
   border-left-color: #CCC;
   border-top-color: #CCC;
   border-right-color: #787878;
-  border-bottom-color: #787878; }
+  border-bottom-color: #787878;
+  position: absolute; }
 
 * {
   box-sizing: border-box; }
@@ -32,7 +32,8 @@ ul {
     border-radius: .5em;
     font-size: 16px;
     margin: 0;
-    padding: 10px; }
+    padding: 10px;
+    position: relative; }
 
 figcaption {
   display: block;
