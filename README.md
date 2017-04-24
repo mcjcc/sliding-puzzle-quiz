@@ -7,6 +7,7 @@
 ```shell
 $ ruby -run -ehttpd . -p8000
 ```
+Alternatively, go to https://gist.github.com/willurd/5720255 and use one of the web servers listed there!
 
 2. Open a browser and in the address bar, go to http://localhost:8000
 
