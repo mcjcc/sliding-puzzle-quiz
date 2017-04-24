@@ -1,5 +1,23 @@
 # Johnny's Version of Sliding Puzzle Quiz
 
+## Instructions on running puzzle
+
+1. To run the project, in the terminal, go to the directory where the project is cloned and run (if you have ruby 1.9.2+ installed)
+
+```shell
+$ ruby -run -ehttpd . -p8000
+```
+
+2. Open a browser and in the address bar, go to http://localhost:8000
+
+## Instructions on how to edit Sass files and have it compile
+
+1. In the project root directory, or where the project is cloned. Run this command for Sass to watch changes in the styles folder. If you don't have Sass installed, check out http://sass-lang.com/install to see how to install the tool.
+
+```shell
+$ sass --watch styles/scss:styles
+```
+
 Breathe in, breathe out.
 
 This quiz will be used most importantly to evaluate skill set and the type of tasks/projects you'd be great for. There are many different ways to solve the challenges outlined below, so take your time, and let us know if you have any questions.
