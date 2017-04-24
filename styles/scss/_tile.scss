@@ -17,6 +17,8 @@
       border-right-color: $dark-grey;
       border-bottom-color: $dark-grey;
       position: absolute;
+      transition: left 500ms ease, top 500ms ease;
+      -webkit-transition: left 500ms ease, top 500ms ease;
 
     }
   }

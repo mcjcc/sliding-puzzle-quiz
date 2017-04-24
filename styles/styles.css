@@ -11,7 +11,9 @@
   border-top-color: #CCC;
   border-right-color: #787878;
   border-bottom-color: #787878;
-  position: absolute; }
+  position: absolute;
+  transition: left 500ms ease, top 500ms ease;
+  -webkit-transition: left 500ms ease, top 500ms ease; }
 
 * {
   box-sizing: border-box; }
