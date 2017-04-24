@@ -16,15 +16,15 @@ var padding = 10; // padding is 10px from tile to edge of the board
 
 var board = {};
 board = {
-  1:{x: 10 , y: 10},
-  2:{x: 78 , y: 10},
-  3:{x: 146, y: 10},
-  4:{x: 10 , y: 78},
-  5:{x: 78 , y: 78},
-  6:{x: 146, y: 78},
-  7:{x: 10 , y: 146},
-  8:{x: 78 , y: 146},
-  9:{x: 146, y: 146}
+  1:{x: 40 , y: 40},
+  2:{x: 108, y: 40},
+  3:{x: 176, y: 40},
+  4:{x: 40 , y: 108},
+  5:{x: 108, y: 108},
+  6:{x: 176, y: 108},
+  7:{x: 40 , y: 176},
+  8:{x: 108, y: 176},
+  9:{x: 176, y: 176}
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function positionTiles(tiles){
     console.log('repositioning tiles!');
 
-    // loop over tiles and add inline styles to position each tile
     for (var i=0; i < tiles.length; i++){
       switch(tiles[i].innerText) {
         case "1":
@@ -74,24 +73,102 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // store target element's getBoundingClientRect()
     // find every other element's getBoundingClientRect()
     // based on that, you can deduce if clicked element is next to open space
-    console.log(target);
 
-    var targetX = target.offsetLeft;
-    var targetY = target.offsetTop;
+    var targetCoordinates = target.getBoundingClientRect();
 
-    console.log(targetX + ", " + targetY);
+    var targetX = targetCoordinates.left + window.scrollX;
+    var targetY = targetCoordinates.top + window.scrollY;
 
-    var getOtherTileCoordinates = {};
-    // loop over tiles and store coordinates into an object
-    for (var i=0; i < tiles.length; i++){
-      getOtherTileCoordinates[tiles[i].innerText] = {
-                                      x: tiles[i].offsetLeft,
-                                      y: tiles[i].offsetTop
-                                     };
+    // var targetElement = {};
+    // targetElement[target.innerText] = {x: targetX, y: targetY};
+    console.log("clicked tile coordinates: " + targetX + ", " + targetY);
 
+
+    // first row checks
+    if (targetX === 40 && targetY === 40) {
+      if(document.elementFromPoint(40,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,40).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
     }
-    console.log(getOtherTileCoordinates);
 
+    if (targetX === 108 && targetY === 40) {
+      if(document.elementFromPoint(40,40).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(176,40).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,108).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    if (targetX === 176 && targetY === 40) {
+      if(document.elementFromPoint(108,40).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(176,108).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    // second row checks
+    if (targetX === 40 && targetY === 108) {
+      if(document.elementFromPoint(40,40).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(40,176).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    if (targetX === 108 && targetY === 108) {
+      if(document.elementFromPoint(108,40).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(40,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(176,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,176).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    if (targetX === 176 && targetY === 108) {
+      if(document.elementFromPoint(176,40).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(176,176).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    // third row
+    if (targetX === 40 && targetY === 176) {
+      if(document.elementFromPoint(40,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,176).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    if (targetX === 108 && targetY === 176) {
+      if(document.elementFromPoint(40,176).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(108,108).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(176,176).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    if (targetX === 176 && targetY === 176) {
+      if(document.elementFromPoint(108,176).getAttribute('class') === 'tile' &&
+         document.elementFromPoint(176,108).getAttribute('class') === 'tile'){
+        console.log("can't move");
+      }
+    }
+
+    // -----might not need this
+    // var getOtherTileCoordinates = {};
+    //
+    //
+    // for (var i=0; i < tiles.length; i++){
+    //   getOtherTileCoordinates[tiles[i].innerText] = {
+    //                                   x: tiles[i].getBoundingClientRect().left + window.scrollX,
+    //                                   y: tiles[i].getBoundingClientRect().top + window.scrollY
+    //                                  };
+    //
+    // }
+    // console.log(getOtherTileCoordinates);
+    // -----might not need this
   }
 
   function moveTile(e){
